@@ -1,13 +1,19 @@
 import express from 'express';
 import connectDB from './data/database.js';
 import Post from './models/post.js';
+import api from './routes/api.js';
 import config from './config.js';
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.get('/', (req, res) => {
   return res.send({ message: '🌟' });
 });
+
+app.use('/api', api);
 
 app.use((req, res) => {
   return res.status(404).send({ message: '찾을 수 없는 페이지입니다.' });
