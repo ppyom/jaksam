@@ -3,15 +3,16 @@ import connectDB from './data/database.js';
 import Post from './models/post.js';
 import api from './routes/api.js';
 import config from './config.js';
+import { makePath } from './utils/path.js';
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(makePath('public')));
 
-app.get('/', (req, res) => {
-  return res.send({ message: '🌟' });
-});
+app.set('views', makePath('views'));
+app.set('view engine', 'ejs');
 
 app.use('/api', api);
 
