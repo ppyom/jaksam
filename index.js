@@ -1,6 +1,4 @@
 import express from 'express';
-
-const PORT = process.env.PORT || 3000;
 import connectDB from './data/database.js';
 import Post from './models/post.js';
 import config from './config.js';
@@ -24,8 +22,13 @@ app.use((error, req, res, next) => {
   });
 });
 
-app.listen(config.host.port, async () => {
-  console.log(`서버가 실행되었습니다!`);
+const serverStart = async () => {
   const client = await connectDB();
   Post.injectDB(client.db('todo'));
+  app.listen(config.host.port, () => {
+    console.log(`서버가 실행되었습니다!`);
+  });
+};
+serverStart().catch((error) => {
+  console.error(`서버실행 중 오류가 발생했습니다. ${error.message}`);
 });
