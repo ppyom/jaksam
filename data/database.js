@@ -1,5 +1,5 @@
-import config from '../config.js';
 import { MongoClient } from 'mongodb';
+import config from '../config.js';
 
 const { user, password, url } = config.database;
 const uri = `mongodb+srv://${user}:${password}@${url}/?retryWrites=true&w=majority&appName=Cluster0`;
