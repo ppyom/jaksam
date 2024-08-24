@@ -28,7 +28,18 @@ router.get('/list', async (req, res) => {
   const posts = await Post.getAll();
   res.render('index', {
     ...options,
+    scripts: ['itemRemove', ...options.scripts],
     posts,
+  });
+});
+
+router.get('/detail/:id', async (req, res) => {
+  const options = defaultRenderOption(req.url, 'detail');
+  const post = await Post.getOne(req.params.id);
+  res.render('index', {
+    ...options,
+    scripts: ['itemRemove', ...options.scripts],
+    post,
   });
 });
 

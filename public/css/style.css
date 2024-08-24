@@ -41,7 +41,6 @@ h2 {
   font-size: var(--font-large);
   color: rgb(var(--gray-500));
 }
-
 .mw {
   max-width: var(--max-width);
   width: calc(100% - var(--padding-default));
@@ -99,3 +98,31 @@ main {
 main > .inner {
   padding: var(--padding-default) 0;
 }
+
+/* common styles */
+.post {
+  display: flex;
+  gap: 0.5rem;
+  background-color: rgb(var(--color-white));
+  padding: calc(var(--padding-default));
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(var(--color-black), 0.15);
+}
+.btn {
+  text-align: center;
+  font-size: var(--font-small);
+  cursor: pointer;
+  padding: calc(var(--padding-default) / 2);
+  color: rgb(var(--color-white));
+  border: none;
+  border-radius: 0.5rem;
+}
+.btn.delete {
+  background-color: rgb(var(--gray-500));
+}
+.btn:hover {
+  filter: brightness(0.8);
+}
+/*.btn.delete:hover {*/
+/*  background-color: rgb(var(--gray-700));*/
+/*}*/
