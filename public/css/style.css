@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+:root {
+  --color-primary: 235, 209, 157;
+  --color-primary-light: 246, 239, 223;
+  --color-secondary: 63, 151, 175;
+  --color-secondary-light: 143, 219, 239;
+  --color-ivory: 249, 248, 245;
+  --color-white: 255, 255, 255;
+  --color-black: 28, 25, 23;
+  --gray-100: 245, 245, 244;
+  --gray-300: 214, 211, 209;
+  --gray-500: 120, 113, 108;
+  --gray-700: 68, 64, 60;
+
+  --max-width: 768px;
+  --padding-default: 1rem;
+
+  --font-small: 0.75rem;
+  --font-medium: 1rem;
+  --font-large: 1.25rem;
+  --font-extra-large: 1.5rem;
+
+  font-size: 16px;
+}
+* {
+  line-height: 1.5;
+}
+
+body {
+  background-color: rgb(var(--color-ivory));
+  color: rgb(var(--color-black));
+}
+h1 {
+  font-weight: bold;
+  font-size: var(--font-extra-large);
+  color: rgb(var(--color-secondary));
+}
+h2 {
+  font-weight: bold;
+  font-size: var(--font-large);
+  color: rgb(var(--gray-500));
+}
+
+.mw {
+  max-width: var(--max-width);
+  width: calc(100% - var(--padding-default));
+  margin: auto;
+}
+
+/* Header & Footer */
+.appHeader,
+.appFooter {
+  padding: var(--padding-default) 0;
+}
+.appHeader {
+  background-color: rgb(var(--color-primary-light));
+}
+.appHeader > .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.appHeader nav a {
+  display: inline-block;
+  margin-left: calc(var(--padding-default) / 2);
+  padding: calc((var(--font-extra-large) - var(--font-large)) / 2)
+    var(--padding-default);
+  border-bottom: 2px inset transparent;
+  font-weight: bold;
+}
+.appHeader nav a:hover,
+.appHeader nav a.on {
+  background-color: rgba(var(--color-white), 0.3);
+}
+.appHeader nav a.on {
+  color: rgb(var(--color-secondary));
+  border-color: rgb(var(--color-primary));
+}
+.appFooter {
+  text-align: center;
+  background-color: rgba(var(--color-white), 0.5);
+}
+.appFooter a {
+  font-weight: bold;
+  color: rgb(var(--color-primary));
+}
+.appFooter a:hover {
+  color: rgb(var(--color-secondary-light));
+}
+
+/* default main */
+main {
+  min-height: calc(
+    100vh - (var(--padding-default) * 2) * 2 -
+      (var(--font-extra-large) + var(--font-medium))
+  );
+}
+main > .inner {
+  padding: var(--padding-default) 0;
+}

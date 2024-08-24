@@ -1,0 +1,43 @@
+#editForm {
+  border-radius: 0.5rem;
+  background-color: rgb(var(--color-white));
+  margin: var(--padding-default) 0;
+  padding: calc(var(--padding-default) * 2) var(--padding-default);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 0 10px rgba(var(--color-black), 0.15);
+}
+#editForm label {
+  font-weight: bold;
+}
+#editForm input,
+#editForm textarea,
+#editForm button {
+  outline: 0;
+  border: 1px solid rgb(var(--gray-300));
+  border-radius: 0.5rem;
+  padding: calc(var(--padding-default) / 2);
+  font-size: var(--font-medium);
+}
+#editForm input:focus,
+#editForm textarea:focus {
+  border-color: rgb(var(--color-primary));
+}
+#editForm textarea {
+  resize: none;
+  height: calc(5rem + var(--padding-default));
+}
+#editForm button {
+  cursor: pointer;
+  background-color: rgb(var(--color-secondary));
+  color: white;
+}
+#editForm button:hover {
+  background-color: rgb(var(--color-secondary-light));
+}
+
+.alertMessage {
+  color: red;
+  text-align: center;
+}
