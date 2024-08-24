@@ -1,4 +1,5 @@
 import express from 'express';
+import Post from '../models/post.js';
 
 const router = express.Router();
 
@@ -17,8 +18,17 @@ router.get('/', (req, res) => {
     post: {},
     fetchOption: {
       url: '/api/post',
-      method: 'post',
+      method: 'POST',
     },
+  });
+});
+
+router.get('/list', async (req, res) => {
+  const options = defaultRenderOption(req.url, 'list');
+  const posts = await Post.getAll();
+  res.render('index', {
+    ...options,
+    posts,
   });
 });
 

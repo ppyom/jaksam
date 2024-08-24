@@ -1,0 +1,59 @@
+.posts {
+  margin: calc(var(--padding-default) * 2) 0;
+}
+.posts .post {
+  width: 100%;
+  margin-bottom: var(--padding-default);
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  background-color: rgb(var(--color-white));
+  padding: calc(var(--padding-default));
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(var(--color-black), 0.15);
+  transition: 0.3s;
+}
+.posts .post:hover {
+  translate: 0 -3px;
+  box-shadow: 0 3px 10px rgba(var(--color-black), 0.2);
+}
+.posts .info {
+  flex: 1;
+  width: calc(100% - 200px);
+}
+.posts .info .title {
+  font-weight: bold;
+  /*width: calc(100% - 200px);*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-large);
+  color: rgb(var(--gray-700));
+}
+.posts .info .date {
+  font-size: var(--font-small);
+  color: rgb(var(--gray-500));
+}
+.posts .btn {
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--font-small);
+  flex-basis: 80px;
+  cursor: pointer;
+  padding: calc(var(--padding-default) / 2);
+  color: rgb(var(--color-white));
+  border: none;
+  border-radius: 0.5rem;
+}
+.posts .btn.detail {
+  background-color: rgb(var(--color-secondary));
+}
+.posts .btn.detail:hover {
+  background-color: rgb(var(--color-secondary-light));
+}
+.posts .btn.delete {
+  background-color: rgb(var(--gray-500));
+}
+.posts .btn.delete:hover {
+  background-color: rgb(var(--gray-700));
+}
