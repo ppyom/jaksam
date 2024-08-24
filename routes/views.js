@@ -43,4 +43,17 @@ router.get('/detail/:id', async (req, res) => {
   });
 });
 
+router.get('/edit/:id', async (req, res) => {
+  const options = defaultRenderOption(req.url, 'edit');
+  const post = await Post.getOne(req.params.id);
+  res.render('index', {
+    ...options,
+    post,
+    fetchOption: {
+      url: `/api/post/${req.params.id}`,
+      method: 'PUT',
+    },
+  });
+});
+
 export default router;

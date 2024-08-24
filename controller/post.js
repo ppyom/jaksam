@@ -14,7 +14,9 @@ const createPost = async (req, res) => {
 };
 const updatePost = async (req, res) => {
   const result = await Post.update(req.params.id, req.body);
-  return res.status(200).send(result);
+  return res
+    .status(200)
+    .send({ ...result, redirectUrl: `/detail/${req.params.id}` });
 };
 const deletePost = async (req, res) => {
   await Post.delete(req.params.id);
