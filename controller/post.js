@@ -10,7 +10,7 @@ const getPost = async (req, res) => {
 };
 const createPost = async (req, res) => {
   const result = await Post.create(req.body);
-  return res.status(201).send(result);
+  return res.status(201).send({ ...result, redirectUrl: '/list' });
 };
 const updatePost = async (req, res) => {
   const result = await Post.update(req.params.id, req.body);

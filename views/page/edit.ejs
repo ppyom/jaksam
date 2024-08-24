@@ -6,6 +6,8 @@
 %>
 <h2>작성하기</h2>
 <form id="editForm">
+  <input id="__url" type="hidden" value="<%= fetchOption.url %>" />
+  <input id="__method" type="hidden" value="<%= fetchOption.method %>" />
   <input id="dateOfCreate" type="hidden" value="<%= dateOfCreate %>" />
   <label for="title">제목</label>
   <input id="title" type="text" value="<%= title %>" />

@@ -15,6 +15,10 @@ router.get('/', (req, res) => {
   res.render('index', {
     ...options,
     post: {},
+    fetchOption: {
+      url: '/api/post',
+      method: 'post',
+    },
   });
 });
 
