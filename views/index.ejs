@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <title><%= !pageTitle ? '작삼' : `작삼 - ${pageTitle}` %></title>
+  <%- include('common/default-head.ejs') %>
+  <% if(!!page) { %>
+    <link rel="stylesheet" href="/css/<%= page %>.css">
+    <% for(const script of scripts) { %>
+      <script src="/js/<%= script %>.js" defer></script>
+    <% } %>
+  <% } %>
+</head>
+<body>
+  <%- include('common/header.ejs') %>
+  <main>
+    <div class="mw inner">
+      <%- include(`page/${page || 'not-found'}.ejs`) %>
+    </div>
+  </main>
+  <%- include('common/footer.ejs') %>
+</body>
+</html>

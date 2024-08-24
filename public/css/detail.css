@@ -1,0 +1,31 @@
+.post {
+  margin: calc(var(--padding-default) * 2) 0;
+  flex-direction: column;
+  color: rgb(var(--gray-700));
+  padding: calc(var(--padding-default) * 1.5);
+}
+.post .postId {
+  font-size: var(--font-small);
+  color: rgb(var(--gray-300));
+}
+.post .title {
+  font-weight: bold;
+  font-size: var(--font-large);
+}
+.post .date {
+  font-size: var(--font-small);
+  color: rgb(var(--gray-500));
+}
+.post .detail {
+  white-space: pre;
+  margin: 1rem 0;
+}
+.post .btnGroup {
+  margin-top: 1rem;
+}
+.post .btn.list {
+  background-color: rgb(var(--color-primary));
+}
+.post .btn.edit {
+  background-color: rgb(var(--color-secondary));
+}

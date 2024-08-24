@@ -1,0 +1,20 @@
+<h2>상세페이지</h2>
+<%
+  const id = post._id;
+  const title = post.title;
+  const dateOfCreate = post.dateOfCreate;
+  const dateOfGoals = post.dateOfGoals;
+  const todoDetail = post.todoDetail;
+%>
+<div id="post" class="post" data-post-id="<%= id %>">
+  <p class="postId">id: <%= id %></p>
+  <p class="title"><%= title %></p>
+  <p class="date">작성일: <%= dateOfCreate %></p>
+  <p class="date">목표일: <%= dateOfGoals %></p>
+  <p class="detail"><%= todoDetail %></p>
+  <div class="btnGroup">
+    <a class="btn list" href="/list">목록보기</a>
+    <a class="btn edit" href="/edit/<%= id %>">수정하기</a>
+    <button id="deleteBtn" class="btn delete">삭제</button>
+  </div>
+</div>

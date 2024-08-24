@@ -1,0 +1,20 @@
+<h2>목록보기</h2>
+<ul id="posts" class="posts">
+  <% for(const post of posts) { %>
+  <%
+    const id = post._id;
+    const title = post.title;
+    const dateOfCreate = post.dateOfCreate;
+    const dateOfGoals = post.dateOfGoals;
+  %>
+    <li class="post" data-post-id="<%= id %>">
+      <div class="info">
+        <p class="title"><%= title %></p>
+        <p class="date">작성일: <%= dateOfCreate %></p>
+        <p class="date">목표일: <%= dateOfGoals %></p>
+      </div>
+      <a class="btn detail" href="/detail/<%= id %>">상세보기</a>
+      <button class="btn delete">삭제</button>
+    </li>
+  <% } %>
+</ul>

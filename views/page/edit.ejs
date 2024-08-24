@@ -1,0 +1,20 @@
+<%
+  const title = post.title || '';
+  const dateOfCreate = post.dateOfCreate || new Date().toISOString().slice(0, 10);
+  const dateOfGoals = post.dateOfGoals || '';
+  const todoDetail = post.todoDetail || '';
+%>
+<h2>작성하기</h2>
+<form id="editForm">
+  <input id="__url" type="hidden" value="<%= fetchOption.url %>" />
+  <input id="__method" type="hidden" value="<%= fetchOption.method %>" />
+  <input id="dateOfCreate" type="hidden" value="<%= dateOfCreate %>" />
+  <label for="title">제목</label>
+  <input id="title" type="text" value="<%= title %>" />
+  <label for="dateOfGoals">목표날짜</label>
+  <input id="dateOfGoals" type="date" value="<%= dateOfGoals %>" />
+  <label for="todoDetail">상세내역</label>
+  <textarea id="todoDetail"><%= todoDetail %></textarea>
+  <button id="submitBtn" type="submit">등록하기</button>
+</form>
+<p class="alertMessage"></p>
