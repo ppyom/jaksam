@@ -1,4 +1,5 @@
 .post {
+  margin: calc(var(--padding-default) * 2) 0;
   flex-direction: column;
   color: rgb(var(--gray-700));
   padding: calc(var(--padding-default) * 1.5);
